@@ -25,7 +25,7 @@ public class SignupForm {
         List<ValidationError>errors = new ArrayList<>();
         User user = User.find.where().eq("email",email).findUnique();
         if(user != null){
-            errors.add(new ValidationError("message","Incorrect email or password"));
+            errors.add(new ValidationError("message","email exists"));
         }
 
         return errors;

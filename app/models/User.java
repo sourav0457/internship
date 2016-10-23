@@ -1,6 +1,7 @@
 package models;
 
 import com.avaje.ebean.Model;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.persistence.*;
 import java.util.List;
@@ -21,7 +22,7 @@ public class User extends Model {
 
     public User(String email, String password) {
         this.email = email;
-        this.password = password;
+        this.password = BCrypt.hashpw(password, BCrypt.gensalt());
     }
 
     @ManyToMany
