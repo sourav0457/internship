@@ -20,7 +20,7 @@ public class RequestController extends Controller {
         c.sender.id=sid;
         c.receiver.id =rid;
         c.status=ConnectionRequest.Status.WAITING;
-        ConnectionRequest.db().save(c)
+        ConnectionRequest.db().save(c);
         return ok();
     }
     }
@@ -39,6 +39,7 @@ public class RequestController extends Controller {
             User.db().save(c.receiver);
             User.db().save(c.sender);
         }
+        return ok();
     }
 
 }
