@@ -5,11 +5,4 @@
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
 
-POST    /login                         controllers.Application.login()
-
-POST    /signup                        controllers.Application.signup()
-
-GET     /profile/:id                   controllers.HomeController.getProfile(id: Long)
-
-POST    /request/send/:sid/:rid        controllers.RequestController.sendRequest(sid :Long,rid: Long)
-POST    /accept/req/:reqid             controllers.RequestController.acceptRequest(reqid: Long)
+GET    /                         controllers.Application.index()
